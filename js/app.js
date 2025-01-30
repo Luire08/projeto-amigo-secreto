@@ -1,12 +1,3 @@
-//Resgata os elementos do HTML
-//Paragrafo da lista de Sorteio
-let sorteio = document.getElementById("lista-sorteio");
-//Input do nome do amigo
-let nomeDoAmigo = document.querySelector("#nome-amigo");
-//Paragrafo de amigos adicionados
-let amigosIncluidos = document.querySelector("#lista-amigos");
-
-
 //Array de amigos adicionados
 let amigos = [];
 
@@ -15,6 +6,11 @@ function capitalizarPrimeraLetra(string) {
 }
 
 function adicionar() {
+    //Input do nome do amigo
+    let nomeDoAmigo = document.querySelector("#nome-amigo");
+    //Paragrafo de amigos adicionados
+    let amigosIncluidos = document.querySelector("#lista-amigos");
+
     //Caso não seja digitado nada na entrada de nome do amigo, exibe um popup na tela
     if(nomeDoAmigo.value === '' || nomeDoAmigo.value === null) {
         alert("Digite o nome do amigo antes de adicionar")
@@ -48,10 +44,16 @@ function excluirAmigo(index) {
 }
 
 function atualizarSorteio() {
+    //Paragrafo da lista de Sorteio
+    let sorteio = document.getElementById("lista-sorteio");
+
     sorteio.innerHTML = "";
 }
 
 function atualizarLista() {
+    //Paragrafo de amigos adicionados
+    let amigosIncluidos = document.querySelector("#lista-amigos");
+    
     amigosIncluidos.innerHTML = "";
 
     for(let i = 0; i < amigos.length; i++) {
@@ -67,6 +69,9 @@ function atualizarLista() {
 }
 
 function sortear() {
+    //Paragrafo da lista de Sorteio
+    let sorteio = document.getElementById("lista-sorteio");
+
     //Caso a quantidade de amigos adicionados seja menor que 3, exibe um popup na tela
     if(amigos.length < 3) {
         alert(`Número mínimo de participantes: 3. Número atual: ${amigos.length}.`);
@@ -100,6 +105,13 @@ function embaralha(lista) {
 }
 
 function reiniciar() {
+    //Paragrafo da lista de Sorteio
+    let sorteio = document.getElementById("lista-sorteio");
+    //Input do nome do amigo
+    let nomeDoAmigo = document.querySelector("#nome-amigo");
+    //Paragrafo de amigos adicionados
+    let amigosIncluidos = document.querySelector("#lista-amigos");
+
     //Limpa o conteúdo do paragrafo da lista de sorteio
     sorteio.innerHTML = '';
     //Limpa o conteúdo do paragrafo de amigos incluidos
